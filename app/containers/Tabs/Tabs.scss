@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.tabs {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  background: $Purple;
+}
+.tab {
+  align-self: stretch;
+  flex-grow: 1;
+  padding: 16px 0 14px;
+  height: 55px;
+  border-bottom: 2px solid transparent;
+  transition: opacity .3s ease-in-out;
+  text-align: center;
+  opacity: .6;
+  cursor: pointer;
+
+  &__active {
+    opacity: 1;
+    border-bottom-color: $White;
+    cursor: default;
+  }
+
+  img {
+    vertical-align: top;
+    padding: 1px;
+  }
+}

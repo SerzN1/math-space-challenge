@@ -1,0 +1,89 @@
+@import '../../styles/variables';
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  background: $Pink;
+  padding: 4px 8px 16px;
+}
+.pagerListWrapper {
+  display: flex;
+  overflow: hidden;
+}
+.pagerList {
+  display: flex;
+  overflow: visible;
+  transition: transform .3s ease-in;
+}
+.pagerPrev,
+.pagerNext {
+  width: 35px;
+  height: 48px;
+  padding: 12px;
+}
+
+.page {
+  text-align: center;
+  padding: 9px;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  background: transparent;
+  color: $White;
+  text-align: center;
+  font-size: 14px;
+  line-height: 2;
+  border: 1px solid $White;
+  transition: all .3s ease-in-out;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    transition: all .3s ease-in-out;
+  }
+  &:before {
+    top: 50%;
+    left: 100%;
+    height: 1px;
+    width: 19px;
+    background: $White;
+  }
+  &:after {
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+  }
+
+  .page:last-child &:before {
+    display: none;
+  }
+
+  .page__active & {
+    border-color: $White;
+  }
+  .page__active &:after {
+    border-color: $White;
+  }
+  .page__completed & {
+    background: $Green;
+    border-color: $Green;
+  }
+  .page__completed &:before {
+    height: 3px;
+    background: $Green;
+    margin-top: -1px;
+  }
+  .page__active.page__completed &:after {
+    border-color: $Green;
+  }
+}

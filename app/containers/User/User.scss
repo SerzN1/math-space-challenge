@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+.user {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  margin: 15px;
+  text-align: center;
+}
+.avatar {
+  vertical-align: top;
+  border-radius: 50%;
+  background: $Blue;
+}
+.online {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: $Red;
+}
